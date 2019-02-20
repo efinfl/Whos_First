@@ -11,16 +11,24 @@
       media="screen"
       href="./assets/css/style.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./assets/css/reset.css"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,500" rel="stylesheet">
   </head>
   <body>
-    <!-- button to start random pick of who takes a bath first -->
-    <button id="start">Who Takes a Bath First</button>
-    <button id="reset">Reset</button>
-    <!-- displays who's turn it is -->
-    <div id="turn"></div>
+    <div class="container">
+      <!-- displays who's turn it is -->
+      <div id="turn">Who's Going First?</div>
+        <!-- button to start random pick of who takes a bath first -->
+      <button class="button" id="start">FIND OUT</button>
+      <!-- Reset Button -->
+      <button class="button" id="reset">RESET</button>
       
-    
-
+    </div>
 
     <script src="./assets/javascript/logic.js"></script>
   </body>

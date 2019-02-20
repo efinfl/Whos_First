@@ -3,12 +3,14 @@ let displayTurn = document.getElementById("turn");
 // Variable to hold chosen person
 let chosen = "";
 let tada = new Audio("assets/sound/Ta Da-SoundBible.com-1884170640.mp3");
+let bubbles = new Audio("assets/sound/Bubbling-SoundBible.com-1684132696.mp3");
 
 // ========= On-Click call choose function ==========
 document.addEventListener("click", event => {
   // if the click event isn't on the "start" element, then do nothing
   if (!event.target.matches("#start")) return;
   event.preventDefault();
+  bubbles.play()
   // otherwise call the function after 4 seconds
   setTimeout(choose, 2000);
 });
@@ -19,14 +21,15 @@ document.addEventListener("click", event => {
   if (!event.target.matches("#reset")) return;
   event.preventDefault();
   // otherwise reset clear turn element
-  chosen = "";
+  chosen = "Who's Going First?";
   displayTurn.innerHTML = chosen;
+ 
 });
 
 // ========= Random chooser ===========
 const choose = () => {
   // Randomly choose between 1 and 10 both inclusive as defined in above variable
-  ranNum = Math.random() * (10 - 1 + 1) + 1;
+  ranNum = Math.floor(Math.random() * (10 - 1 + 1) + 1);
   console.log(ranNum);
   
   // if ranNum is less than or equal to 5, then it's Harrison's turn
