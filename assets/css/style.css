@@ -1,0 +1,42 @@
+body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+/* #test {
+  font-size: 20px;
+  letter-spacing: 2px;
+  animation: text 0.5s 1;
+}
+
+@keyframes text {
+   0%{
+       font-size: 100%;
+       letter-spacing: 2px;
+       opacity: 0
+   }
+   25%{
+       font-size: 300%;
+       letter-spacing: 25px;
+       opacity: 1
+   }
+
+   85%{
+       font-size: 100%;
+       letter-spacing: 2px;
+   }
+} */
+
+#turn {
+    transition: all 0.5s;
+    font-size: 50px;
+    opacity: 1;
+}
+
+#turn.pre-animate {
+    font-size: 0px;
+    opacity: 0;
+    letter-spacing: 25px;
+}
+
+
