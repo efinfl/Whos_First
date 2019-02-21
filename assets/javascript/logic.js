@@ -10,7 +10,13 @@ document.addEventListener("click", event => {
   // if the click event isn't on the "start" element, then do nothing
   if (!event.target.matches("#start")) return;
   event.preventDefault();
-  bubbles.play()
+  // play bubbles sound
+  bubbles.play();
+  //  animation to make text fade
+  displayTurn.classList.add("pre-animate2");
+  setTimeout(() => {
+    displayTurn.classList.remove("pre-animate2");
+  }, 2000);
   // otherwise call the function after 4 seconds
   setTimeout(choose, 2000);
 });
@@ -21,9 +27,8 @@ document.addEventListener("click", event => {
   if (!event.target.matches("#reset")) return;
   event.preventDefault();
   // otherwise reset clear turn element
-  chosen = "Who's Going First?";
+  chosen = "Who's First?";
   displayTurn.innerHTML = chosen;
- 
 });
 
 // ========= Random chooser ===========
@@ -31,24 +36,24 @@ const choose = () => {
   // Randomly choose between 1 and 10 both inclusive as defined in above variable
   ranNum = Math.floor(Math.random() * (10 - 1 + 1) + 1);
   console.log(ranNum);
-  
+
   // if ranNum is less than or equal to 5, then it's Harrison's turn
   if (ranNum <= 5) {
     chosen = "Harrison";
   } else chosen = "Reese"; // otherwise, it's Reese's turn
-  
+
   // Animates display of name
   displayTurn.classList.add("pre-animate");
-  setTimeout (() => {
-    displayTurn.classList.remove("pre-animate")
+  setTimeout(() => {
+    displayTurn.classList.remove("pre-animate");
   }, 500);
-  
+
   // and chosen gets displayed
-  displayTurn.innerHTML = chosen; 
+  displayTurn.innerHTML = chosen;
 
   // Tada sound plays when the person is chosen
   tada.play();
-  
-// Display animation for 4 sec
+
+  // Display animation for 4 sec
   // Hide animation
 };

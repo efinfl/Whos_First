@@ -1,3 +1,7 @@
+/* div { 
+    border: solid 2px magenta;
+} */
+
 body {
   height: 100%;
   background: url("../images/bath-splashing-ducks-joy-160992.jpeg") no-repeat
@@ -16,15 +20,16 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
 }
+.turnContainer {
+  min-height: 200px;
+}
 
 /* Displays result of who's turn it is */
 #turn {
-  transition: all 0.5s;
-  font-size: 100px;
+  transition: all 0.6s;
+  font-size: 170px;
   font-family: "Lobster", cursive;
   opacity: 1;
-  min-height: 100px;
-  margin: 40px 0 40px 0;
   color: White;
   text-shadow: 0px 0px 40px rgb(7, 1, 77);
   top: 1%;
@@ -32,8 +37,16 @@ body {
 /* This is what the display animation starts off at */
 #turn.pre-animate {
   font-size: 0px;
+  opacity: 0.5;
+  letter-spacing: 10px;
+}
+#turn.pre-animate2 {
+  transition: all 2.5s;
   opacity: 0;
-  letter-spacing: 25px;
+}
+
+.btnContainer {
+  min-height: 150px;
 }
 
 .button {
@@ -43,15 +56,49 @@ body {
   font-size: 24px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  border: .5px solid rgb(0, 0, 0, 0.8);
+  border: 0.5px solid rgb(0, 0, 0, 0.8);
   border-radius: 6px;
   margin: 0 10px 0 10px;
   cursor: pointer;
   transition: all 0.07s;
 }
 .button:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   border: 2px solid rgb(255, 255, 169);
   box-shadow: 0 0 10px rgb(255, 255, 169);
   color: rgb(255, 255, 169);
+}
+
+/* ========================================= */
+@media only screen and (max-width: 850px) {
+  .turnContainer {
+    min-height: 150px;
+  }
+
+  #turn {
+    font-size: 150px;
+  }
+}
+
+/* =========================================== */
+@media only screen and (max-width: 650px) {
+  .turnContainer {
+    min-height: 150px;
+  }
+
+  #turn {
+    font-size: 100px;
+  }
+
+  .button {
+    padding: 10px;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    border: 0.5px solid rgb(0, 0, 0, 0.8);
+    border-radius: 6px;
+    margin: 0 5px 0 5px;
+    cursor: pointer;
+    transition: all 0.07s;
+  }
 }
